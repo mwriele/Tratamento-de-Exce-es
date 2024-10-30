@@ -1,4 +1,5 @@
 public class Lista03Exe03 {
+
     public static void main(String[] args) {
         metodoRecursivo(0);
     }
@@ -10,15 +11,20 @@ public class Lista03Exe03 {
 }
 
 /*
-* Saída no console: O que acontece é que o programa entra em um loop infinito de chamadas recursivas até que a pilha de chamadas se esgote,
-* resultando em um StackOverflowError. Um estouro de pilha ocorre quando há muitas chamadas de função empilhadas na memória,
-* mais do que o espaço disponível permite. Para evitar isso, podemos limitar a profundidade da recursão. Por exemplo, podemos
-* parar a chamada recursiva quando 'i' atingir um determinado valor.
+    Ao executar o método `metodoRecursivo`, ele chama a si mesmo repetidamente, 
+    aumentando o valor de `i` a cada chamada. Isso resulta em um estouro de pilha 
+    (stack overflow) quando a pilha de chamadas atinge seu limite, pois não há 
+    condição de parada.
 
-* Alteração para evitar estouro de pilha:
-* public static void metodoRecursivo(int i) {
-*     if (i > 10) return; // Limita a profundidade da recursão
-*     System.out.println("Chamada recursiva: " + i);
-*     metodoRecursivo(i + 1);
-* }
+    Um estouro de pilha ocorre quando uma função recursiva continua chamando a 
+    si mesma sem parar, esgotando a memória da pilha. Para evitar isso, deve-se 
+    incluir uma condição de parada no método recursivo, como um limite de valor 
+    para `i` ou uma condição que retorne antes de chamar o método novamente.
+
+    Exemplo de correção:
+    public static void metodoRecursivo(int i) {
+        if (i > 10) return; // Condição de parada
+        System.out.println("Chamada recursiva: " + i);
+        metodoRecursivo(i + 1);
+    }
 */
