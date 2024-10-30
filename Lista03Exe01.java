@@ -3,11 +3,10 @@ import java.util.Scanner;
 public class Lista03Exe01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         try {
-            System.out.print("Digite o primeiro número decimal: ");
+            System.out.print("Digite o primeiro número: ");
             double num1 = scanner.nextDouble();
-            System.out.print("Digite o segundo número decimal: ");
+            System.out.print("Digite o segundo número: ");
             double num2 = scanner.nextDouble();
 
             if (num1 <= 0 || num2 <= 0) {
